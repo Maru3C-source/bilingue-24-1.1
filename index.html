@@ -1,0 +1,544 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>ザンカ・ルド・レムリン — Lección | Maru 3C</title>
+<style>
+:root{--bg-main:#f0f2f5;--bg-card:#fff;--bg-card-alt:#eef2f7;--accent-teal:#4ecdc4;--accent-gold:#f5a623;--navy:#0f3460;--navy-dark:#1a1a2e;--navy-mid:#16213e;--text-dark:#111;--border:rgba(0,0,0,0.09);--green-es:#1a7a4a;--literal-color:#b06d10;--orange:#e07b20;--hl-yellow:rgba(255,213,0,0.5);--hl-green:rgba(60,200,90,0.42);--hl-blue:rgba(50,140,255,0.38);--hl-pink:rgba(255,80,150,0.38);--hl-purple:rgba(155,80,255,0.35);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,'Hiragino Sans','Yu Gothic UI','Meiryo','Noto Sans JP',sans-serif;background:var(--bg-main);color:var(--text-dark);min-height:100vh;padding-bottom:180px;}
+header{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy-mid) 55%,var(--navy) 100%);padding:36px 24px 30px;text-align:center;box-shadow:0 4px 32px rgba(15,52,96,0.55);position:relative;overflow:hidden;}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(78,205,196,0.12) 0%,transparent 65%),radial-gradient(ellipse at 80% 20%,rgba(245,166,35,0.10) 0%,transparent 55%);pointer-events:none;}
+.header-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--accent-teal);background:rgba(78,205,196,0.13);border:1px solid rgba(78,205,196,0.5);border-radius:20px;padding:4px 14px;margin-bottom:12px;}
+header h1{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-size:clamp(1.2rem,4vw,1.7rem);font-weight:700;color:#fff;text-shadow:0 2px 20px rgba(78,205,196,0.25);margin-bottom:6px;}
+.header-sub{font-size:0.85rem;color:var(--accent-teal);margin-bottom:4px;}
+.header-es{font-size:0.9rem;font-weight:700;color:var(--accent-gold);}
+.container{max-width:860px;margin:24px auto 0;padding:0 16px 20px;display:flex;flex-direction:column;gap:22px;}
+.card{background:var(--bg-card);border-radius:16px;border:1px solid var(--border);overflow:visible;box-shadow:0 3px 20px rgba(0,0,0,0.07);break-inside:avoid;page-break-inside:avoid;}
+.card-alt{background:var(--bg-card-alt);}
+.card-head{padding:10px 22px 9px;border-bottom:1px solid var(--border);background:linear-gradient(90deg,rgba(15,52,96,0.05) 0%,transparent 100%);}
+.seq{display:inline-block;font-size:10px;font-weight:900;letter-spacing:1px;color:#fff;background:var(--orange);border-radius:20px;padding:2px 12px;}
+.vocab-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:0;border-bottom:2px solid rgba(224,123,32,0.2);background:linear-gradient(180deg,rgba(224,123,32,0.04) 0%,transparent 100%);}
+.vw{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 16px;border-right:1px solid rgba(0,0,0,0.06);gap:4px;text-align:center;min-width:90px;max-width:150px;flex:0 0 auto;}
+.vw:last-child{border-right:none;}
+.lit{font-size:0.57rem;font-weight:500;color:#aaa;text-align:center;line-height:1.4;order:1;margin-bottom:1px;}
+.jpw{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-size:0.88rem;font-weight:700;color:var(--orange);text-align:center;line-height:2.0!important;order:2;}
+.enw{font-size:0.83rem;font-weight:700;color:var(--orange);text-align:center;line-height:1.5;order:2;}
+.rom{font-size:0.55rem;color:rgba(37,99,168,0.55);font-style:italic;text-align:center;order:3;margin-top:1px;min-height:1em;}
+ruby{ruby-position:over;}
+rt{font-family:-apple-system,sans-serif;font-size:0.52em;color:#777;font-weight:400;text-align:center;}
+.jpw{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-size:0.88rem;font-weight:700;color:var(--orange);line-height:2.6;}
+.sentences{padding:16px 20px 18px;display:flex;flex-direction:column;gap:0;}
+.line-jp{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-size:1.05rem;color:var(--text-dark);line-height:2.8;margin-bottom:6px;word-break:break-all;overflow-wrap:anywhere;}
+.line-dialogue{font-family:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;font-size:0.95rem;color:#333;line-height:2.8;background:rgba(37,99,168,0.04);border-left:3px solid rgba(37,99,168,0.25);padding:10px 14px;border-radius:4px;margin-bottom:6px;}
+.line-en{font-size:1.05rem;color:var(--text-dark);line-height:1.8;}
+.line-quote{font-size:0.97rem;color:#444;line-height:1.8;background:rgba(37,99,168,0.04);border-left:3px solid rgba(37,99,168,0.25);padding:10px 14px;border-radius:4px;}
+.line-es{font-size:0.87rem;color:var(--green-es);font-style:italic;line-height:1.6;padding:3px 0 3px 10px;border-left:3px solid rgba(26,122,74,0.25);}
+.line-literal{font-size:0.82rem;color:var(--literal-color);line-height:1.7;padding:3px 0 3px 10px;border-left:3px solid rgba(176,109,16,0.25);}
+.sentence-block,.line-group{margin-bottom:24px;}
+.sentence-block:last-child,.line-group:last-child{margin-bottom:0;}
+.speaker-tag{display:inline-block;font-size:0.7rem;font-weight:900;letter-spacing:1px;color:#fff;background:rgba(15,52,96,0.55);border-radius:12px;padding:1px 9px;margin-bottom:4px;margin-right:4px;}
+.cb-layer{display:none;}
+#cb-furigana:checked ~ main rt{visibility:hidden;}
+#cb-romaji:checked ~ main .rom{visibility:hidden;}
+#cb-furigana:checked ~ .controls-bar label[for="cb-furigana"],
+#cb-romaji:checked ~ .controls-bar label[for="cb-romaji"]{background:rgba(0,0,0,0.2)!important;color:rgba(255,255,255,0.4)!important;border-color:rgba(255,255,255,0.1)!important;text-decoration:line-through!important;display:inline-block!important;}
+#cb-vocab:checked ~ main .vocab-strip{visibility:hidden;}
+#cb-es:checked ~ main .line-es{visibility:hidden;}
+#cb-literal:checked ~ main .line-literal{visibility:hidden;}
+#cb-vocab:checked ~ .controls-bar label[for="cb-vocab"],
+#cb-es:checked ~ .controls-bar label[for="cb-es"],
+#cb-literal:checked ~ .controls-bar label[for="cb-literal"]{background:rgba(0,0,0,0.2)!important;color:rgba(255,255,255,0.4)!important;border-color:rgba(255,255,255,0.1)!important;text-decoration:line-through!important;display:inline-block!important;}
+.hl-palette{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:5px 10px;}
+.hl-label{font-size:0.65rem;color:rgba(255,255,255,0.5);font-weight:700;margin-right:1px;white-space:nowrap;}
+.hl-swatch{width:19px;height:19px;border-radius:50%;cursor:pointer;border:2px solid rgba(255,255,255,0.22);transition:transform 0.15s,border-color 0.15s,box-shadow 0.15s;flex-shrink:0;padding:0;-webkit-appearance:none;appearance:none;outline:none;touch-action:manipulation;}
+.hl-swatch:hover{transform:scale(1.22);}
+.hl-swatch.active{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,0.5);transform:scale(1.18);}
+.hl-swatch[data-color='yellow']{background:#ffd500;}
+.hl-swatch[data-color='green']{background:#3dc85a;}
+.hl-swatch[data-color='blue']{background:#338cff;}
+.hl-swatch[data-color='pink']{background:#ff4fa0;}
+.hl-swatch[data-color='purple']{background:#9b50ff;}
+.hl-swatch[data-color='none']{background:rgba(255,255,255,0.12);position:relative;overflow:hidden;}
+.hl-swatch[data-color='none']::after{content:'';position:absolute;inset:1px;background:linear-gradient(135deg,transparent 42%,rgba(255,70,70,0.9) 42%,rgba(255,70,70,0.9) 58%,transparent 58%);border-radius:50%;}
+span.hl-yellow{background:var(--hl-yellow);color:inherit;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+span.hl-green{background:var(--hl-green);color:inherit;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+span.hl-blue{background:var(--hl-blue);color:inherit;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+span.hl-pink{background:var(--hl-pink);color:inherit;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+span.hl-purple{background:var(--hl-purple);color:inherit;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+.controls-bar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(26,26,46,0.97);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,0.08);padding:10px 12px max(10px,env(safe-area-inset-bottom,10px));display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center;}
+.lbl-toggle{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:6px 13px;font-size:0.72rem;font-weight:800;cursor:pointer;-webkit-user-select:none;user-select:none;transition:all 0.15s;white-space:nowrap;display:inline-block;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,255,255,0.15);}
+.ctrl-btn{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.18);border-radius:20px;padding:6px 13px;font-size:0.72rem;font-weight:800;cursor:pointer;white-space:nowrap;touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,255,255,0.15);}
+.ctrl-btn-edit{background:rgba(201,125,16,0.25);border-color:#c97d10;color:#f5a623;}
+.ctrl-btn-save{background:rgba(26,138,90,0.25);border-color:#1a8a5a;color:#4ecdc4;}
+.ctrl-divider{width:1px;height:24px;background:rgba(255,255,255,0.12);flex-shrink:0;}
+.edit-banner{display:none;position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#c97d10,#e8a020);color:#fff;text-align:center;padding:8px 16px;font-size:0.78rem;font-weight:800;}
+@media(max-width:600px){
+  body{padding-bottom:200px;}
+  .container{padding:0 10px 10px;gap:14px;}
+  .card{border-radius:12px;}
+  .card-head{padding:8px 14px 7px;}
+  .vocab-strip{flex-wrap:wrap;}
+  .vw{min-width:calc(33.33% - 1px);max-width:calc(33.33% - 1px);flex:0 0 calc(33.33% - 1px);padding:8px 4px;}
+  .lit{font-size:0.5rem;}
+  .jpw{font-size:0.8rem;}
+  .enw{font-size:0.78rem;}
+  .rom{font-size:0.48rem;}
+  .sentences{padding:12px 12px 14px;}
+  .line-jp,.line-dialogue{font-size:0.92rem;line-height:2.6;word-break:break-all;overflow-wrap:anywhere;}
+  .line-en,.line-quote{font-size:0.9rem;}
+  .line-es{font-size:0.8rem;}
+  .line-literal{font-size:0.72rem;word-break:break-word;}
+  .controls-bar{padding:7px 8px max(8px,env(safe-area-inset-bottom,8px));gap:4px;}
+  .lbl-toggle,.ctrl-btn{font-size:0.66rem;padding:5px 10px;}
+  .hl-swatch{width:17px;height:17px;}
+  .hl-palette{padding:4px 8px;gap:4px;}
+  .ctrl-divider{height:20px;}
+  header{padding:24px 16px 20px;}
+  header h1{font-size:clamp(1rem,5vw,1.4rem);}
+}
+@media print{.controls-bar,.edit-banner{display:none!important;}body{padding:0!important;background:#fff!important;}.container{padding:0!important;max-width:100%!important;gap:14pt!important;}.card{box-shadow:none!important;border:1pt solid #ddd!important;break-inside:avoid!important;page-break-inside:avoid!important;overflow:visible!important;}.card-alt{background:var(--bg-card-alt)!important;}}
+</style>
+<style>/* Chunk Builder — Maru 3C (Universal) */
+span[data-pair-id]{
+  text-decoration:underline;
+  text-decoration-color:transparent;
+  text-underline-offset:3px;
+  border-radius:3px;
+  transition:background 0.15s,text-decoration-color 0.15s;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  user-select:none;
+  -webkit-user-select:none;
+}
+body.chunks-on span[data-pair-id].chl{background:rgba(224,123,32,0.18);text-decoration-color:#e07b20;}</style></head>
+<body class="">
+<input type="checkbox" id="cb-furigana" class="cb-layer">
+<input type="checkbox" id="cb-romaji" class="cb-layer">
+<input type="checkbox" id="cb-vocab" class="cb-layer">
+<input type="checkbox" id="cb-es" class="cb-layer">
+<input type="checkbox" id="cb-literal" class="cb-layer">
+<div class="edit-banner" style="display: none;">✏️ MODO EDICIÓN</div>
+<header>
+  <div class="header-badge">Método Maru 3C · Diálogo</div>
+  <h1>ザンカ・ルド・レムリン</h1>
+  <div class="header-sub">Diálogo · Dialecto del oeste de Japón</div>
+  <div class="header-es">Zanka, Rudo y Lemurin</div>
+</header>
+<main class="container" id="main-content">
+
+<!-- §1 -->
+<div class="card"><div class="card-head"><div class="seq">§1</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">ya, moverse</div><div class="jpw"><ruby>動<rt>うご</rt></ruby>いて</div><div class="rom">ugoite</div></div>
+  <div class="vw"><div class="lit">estar bien, no hay problema</div><div class="jpw"><ruby>大丈夫<rt>だいじょうぶ</rt></ruby>なのか</div><div class="rom">daijoubu nano ka</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span>ルド。</div>
+  <div class="line-es">Zanka: Rudo.</div>
+  <div class="line-literal">Zanka: Rudo.</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>ザンカ！お<ruby>前<rt>まえ</rt></ruby>、<span data-pair-id="p1" class="">もう</span><ruby></ruby><span data-pair-id="p2" class=""><ruby>動<rt>うご</rt></ruby>いて<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>なのか</span>？</div>
+  <div class="line-es">Rudo: ¡Zanka! ¿<span data-pair-id="p1" class="">Ya</span> <span data-pair-id="p2" class="">estás bien para moverte</span>?</div>
+  <div class="line-literal">↳ Zanka! tú, ya mover bien-¿es?</div>
+</div></div></div>
+
+<!-- §2 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§2</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">estar encerrado en la habitación</div><div class="jpw"><ruby>部屋<rt>へや</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>おんのは</div><div class="rom">heya n naka on no wa</div></div>
+  <div class="vw"><div class="lit">no me sienta bien (dialecto)</div><div class="jpw"><ruby>合<rt>あ</rt></ruby>わんのじゃ</div><div class="rom">awan no ja</div></div>
+  <div class="vw"><div class="lit">incómodo, tenso</div><div class="jpw"><ruby>気<rt>き</rt></ruby>まずい</div><div class="rom">kimazui</div></div>
+  <div class="vw"><div class="lit">persona desconocida, extraño</div><div class="jpw"><ruby>他人<rt>たにん</rt></ruby></div><div class="rom">tanin</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><span data-pair-id="p3" class="">ずっと</span><ruby></ruby><span data-pair-id="p9" class=""><ruby>部屋<rt>へや</rt></ruby>ん<ruby>中<rt>なか</rt></ruby><span data-pair-id="p10" class="">おんの</span>は</span><ruby></ruby><span data-pair-id="p4" class=""><ruby>合<rt>あ</rt></ruby>わんのじゃ</span>。<span data-pair-id="p5" class="">あと</span><ruby></ruby><span data-pair-id="p6" class=""><ruby>隣<rt>となり</rt></ruby>で</span><ruby></ruby><span data-pair-id="p7" class=""><ruby>他人<rt>たにん</rt></ruby>が<ruby>寝<rt>ね</rt></ruby>とると</span><ruby></ruby><span data-pair-id="p8" class=""><ruby>気<rt>き</rt></ruby>まずい</span>。</div>
+  <div class="line-es">Zanka: <span data-pair-id="p10" class="">Estar</span> encerrado <span data-pair-id="p3" class="">todo el tiempo</span> <span data-pair-id="p9" class="">en la habitación</span> <span data-pair-id="p4" class="">no me va</span>. <span data-pair-id="p5" class="">Además</span>, <span data-pair-id="p8" class="">me resulta incómodo</span> que haya <span data-pair-id="p7" class="">un desconocido durmiendo</span> <span data-pair-id="p6" class="">al lado</span>.</div>
+  <div class="line-literal">↳ siempre habitación-dentro-estar no-me-sienta-bien. además, al-lado desconocido duerme-y incómodo.</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><ruby>隣<rt>となり</rt></ruby>？</div>
+  <div class="line-es">Rudo: ¿Al lado?</div>
+  <div class="line-literal">↳ ¿al-lado?</div>
+</div></div></div>
+
+<!-- §3 -->
+<div class="card"><div class="card-head"><div class="seq">§3</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">animar, alentar</div><div class="jpw"><ruby>励<rt>はげ</rt></ruby>ます</div><div class="rom">hagemasu</div></div>
+  <div class="vw"><div class="lit">querer ir</div><div class="jpw"><ruby>行<rt>い</rt></ruby>きたいんか</div><div class="rom">ikitain ka</div></div>
+  <div class="vw"><div class="lit">diferente, fuera de lugar</div><div class="jpw"><ruby>違<rt>ちが</rt></ruby>う<ruby>気<rt>き</rt></ruby>がした</div><div class="rom">chigau ki ga shita</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span>あ…。<ruby></ruby><span data-pair-id="p11" class=""><ruby>励<rt>はげ</rt></ruby>ましに</span><span data-pair-id="p12" class="">でも<ruby>行<rt>い</rt></ruby>きたいんか</span>？</div>
+  <div class="line-es">Zanka: Ah… ¿<span data-pair-id="p12" class="">Acaso quieres ir</span> <span data-pair-id="p11" class="">a animarlo</span>?</div>
+  <div class="line-literal">↳ ah… animar-para ir-quieres-¿eh?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>うっ…よ、その、<span data-pair-id="p13" class="">そうだけど</span>、<ruby></ruby><span data-pair-id="p14" class=""><ruby>俺<rt>おれ</rt></ruby>なんかが</span><ruby></ruby><span data-pair-id="p15" class=""><ruby>何<rt>なに</rt></ruby>か<ruby>言<rt>い</rt></ruby>うのも</span><ruby></ruby><span data-pair-id="p16" class=""><ruby>違<rt>ちが</rt></ruby>う</span><ruby></ruby><span data-pair-id="p17" class=""><ruby>気<rt>き</rt></ruby>がしてた。</span></div>
+  <div class="line-es">Rudo: Ugh… bueno, eso, <span data-pair-id="p13" class="">sí, pero</span> <span data-pair-id="p17" class="">sentía que</span> <span data-pair-id="p14" class="">alguien como yo</span> <span data-pair-id="p15" class="">diciendo algo</span> <span data-pair-id="p16" class="">estaba fuera de lugar</span>.</div>
+  <div class="line-literal">↳ ugh… bueno, eso, sí-pero, yo-como decir-cosa-también diferente-sentía.</div>
+</div></div></div>
+
+<!-- §4 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§4</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">primero, antes</div><div class="jpw"><ruby>先<rt>さき</rt></ruby>に</div><div class="rom">saki ni</div></div>
+  <div class="vw"><div class="lit">lo que has olvidado</div><div class="jpw"><ruby>忘<rt>わす</rt></ruby>れとること</div><div class="rom">wasurete oru koto</div></div>
+  <div class="vw"><div class="lit">te lo digo, te enseño (dialecto)</div><div class="jpw">教えちゃるわ</div><div class="rom">oshiete charu wa</div></div>
+  <div class="vw"><div class="lit">¿tienes intención de…?</div><div class="jpw"><ruby>気<rt>き</rt></ruby>あるんか</div><div class="rom">ki aru n ka</div></div>
+  <div class="vw"><div class="lit">buscar</div><div class="jpw"><ruby>探<rt>さが</rt></ruby>す</div><div class="rom">sagasu</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><ruby></ruby><span data-pair-id="p18" class=""><ruby>先<rt>さき</rt></ruby>に</span><span data-pair-id="p19" class="">お<ruby>前<rt>まえ</rt></ruby>が<ruby>忘<rt>わす</rt></ruby>れとること</span><ruby></ruby><span data-pair-id="p20" class=""><ruby>教<rt>おし</rt></ruby>えちゃるわ</span>。</div>
+  <div class="line-es">Zanka: <span data-pair-id="p18" class="">Primero</span> <span data-pair-id="p20" class="">te voy a decir</span> <span data-pair-id="p19" class="">lo que has olvidado</span>.</div>
+  <div class="line-literal">↳ primero tú-que olvidando-estás cosa te-digo.</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>も？</div>
+  <div class="line-es">Rudo: ¿Eh?</div>
+  <div class="line-literal">↳ ¿eh?</div>
+  <div class="line-dialogue"><span class="speaker-tag"></span><span data-pair-id="p22" class=""><span class="speaker-tag">ザンカ</span>アモ<ruby>探<rt>さが</rt></ruby>す</span><ruby></ruby><span data-pair-id="p21" class=""><ruby>気<rt>き</rt></ruby>あるんか</span>？</div>
+  <div class="line-es">Zanka: ¿<span data-pair-id="p21" class="">Tienes intención de</span> <span data-pair-id="p22" class="">buscar a Amo</span>?</div>
+  <div class="line-literal">↳ Amo buscar intención-¿tienes?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>アモ…。</div>
+  <div class="line-es">Rudo: Amo…</div>
+  <div class="line-literal">↳ Amo…</div>
+</div></div></div>
+
+<!-- §5 -->
+<div class="card"><div class="card-head"><div class="seq">§5</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">francamente, siendo honesto</div><div class="jpw">ぶっちゃけ</div><div class="rom">bucchake</div></div>
+  <div class="vw"><div class="lit">me da igual, me importa poco</div><div class="jpw">どうでもええ</div><div class="rom">dou demo ee</div></div>
+  <div class="vw"><div class="lit">resonar, conectar</div><div class="jpw"><ruby>共鳴<rt>きょうめい</rt></ruby>する</div><div class="rom">kyoumei suru</div></div>
+  <div class="vw"><div class="lit">seguridad, paradero</div><div class="jpw"><ruby>安否<rt>あんぴ</rt></ruby></div><div class="rom">anpi</div></div>
+  <div class="vw"><div class="lit">&nbsp;enfrentarse (a alguien), ponerse al brinco</div><div class="jpw"><ruby>啖呵<rt>たんか</rt></ruby>を<ruby>切<rt>き</rt></ruby>る</div><div class="rom">tanka wo kiru</div></div>
+  <div class="vw"><div class="lit">saqueador, alborotador</div><div class="jpw"><ruby>荒<rt>あ</rt></ruby>らし<ruby>屋<rt>や</rt></ruby></div><div class="rom">arashiya</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><ruby>俺<rt>おれ</rt></ruby>は<span data-pair-id="p24" class="">あの<ruby>女<rt>おんな</rt></ruby>のことは</span><span data-pair-id="p23" class="">ぶっちゃけ</span><span data-pair-id="p25" class="">どうでもええ</span>。<span data-pair-id="p27" class="">でもお<ruby>前<rt>まえ</rt></ruby>は</span><span data-pair-id="p28" class="">あの<ruby>砂漠<rt>さばく</rt></ruby>で</span><span data-pair-id="p30" class="">アモと</span><ruby></ruby><span data-pair-id="p31" class=""><ruby>何<rt>なに</rt></ruby>かしら</span><ruby></ruby><span data-pair-id="p32" class=""><ruby>共鳴<rt>きょうめい</rt></ruby>して</span>、<ruby></ruby><span data-pair-id="p35" class=""><ruby>安否<rt>あんぴ</rt></ruby><ruby>確<rt>たし</rt></ruby>かめるために</span><ruby></ruby><span data-pair-id="p33" class=""><ruby>荒<rt>あ</rt></ruby>らし<ruby>屋<rt>や</rt></ruby>に</span><ruby></ruby><span data-pair-id="p34" class=""><ruby>啖呵<rt>たんか</rt></ruby><ruby>切<rt>き</rt></ruby>っとったんが</span>、<span data-pair-id="p36" class="">その<ruby>後<rt>ご</rt></ruby>のことは</span><ruby></ruby><span data-pair-id="p37" class=""><ruby>考<rt>かんが</rt></ruby>えとらんのか</span>？</div>
+  <div class="line-es">Zanka: <span data-pair-id="p23" class="">Francamente</span>, <span data-pair-id="p24" class="">esa chica</span> <span data-pair-id="p25" class="">me da igual</span>. <span data-pair-id="p27" class="">Pero tú</span> <span data-pair-id="p32" class="">conectaste</span> <span data-pair-id="p31" class="">de alguna manera</span> <span data-pair-id="p30" class="">con Amo</span> <span data-pair-id="p28" class="">en ese desierto,</span> y <span data-pair-id="p34" class="">te enfrentaste</span> <span data-pair-id="p33" class="">a los saqueadores</span> <span data-pair-id="p35" class="">para confirmar su seguridad</span>, ¿y <span data-pair-id="p37" class="">no has pensado</span> <span data-pair-id="p36" class="">en lo que viene después</span>?</div>
+  <div class="line-literal">↳ yo aquella chica-ACUS francamente me-da-igual. pero tú aquel desierto-en Amo-con de-alguna-manera resonaste, seguridad confirmar-para saqueadores-a provocaste, su-después-ACUS no-estás-pensando-¿eh?</div>
+</div></div></div>
+
+<!-- §6 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§6</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">no es que quiera decir que… primero</div><div class="jpw">〜が<ruby>先<rt>さき</rt></ruby>とか<ruby>言<rt>い</rt></ruby>いたいんやない</div><div class="rom">〜ga saki toka iitain ya nai</div></div>
+  <div class="vw"><div class="lit">manera de tender la mano</div><div class="jpw"><ruby>手<rt>て</rt></ruby>の<ruby>差<rt>さ</rt></ruby>し<ruby>伸<rt>の</rt></ruby>べ<ruby>方<rt>かた</rt></ruby></div><div class="rom">te no sashinobe-kata</div></div>
+  <div class="vw"><div class="lit">ve a aprender ahora (dialecto)</div><div class="jpw">今<ruby>知<rt>し</rt></ruby>りに<ruby>行<rt>い</rt></ruby>けや</div><div class="rom">ima shiri ni ike ya</div></div>
+  <div class="vw"><div class="lit">lloriquear, estar indeciso</div><div class="jpw">ウジウジと</div><div class="rom">uji uji to</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><ruby></ruby><span data-pair-id="p41" class=""><ruby>別<rt>べつ</rt></ruby>に</span><span data-pair-id="p38" class="">アモ<ruby>探<rt>さが</rt></ruby>すのが</span><ruby></ruby><span data-pair-id="p39" class=""><ruby>先<rt>さき</rt></ruby>とか</span><ruby></ruby><span data-pair-id="p40" class=""><ruby>言<rt>い</rt></ruby>いたいんやない</span>。<span data-pair-id="p42" class="">わかっとる</span>。<span data-pair-id="p43" class="">お<ruby>前<rt>まえ</rt></ruby>は</span><span data-pair-id="p44" class="">まだ</span><ruby></ruby><span data-pair-id="p45" class=""><ruby>手<rt>て</rt></ruby>の<ruby>差<rt>さ</rt></ruby>し<ruby>伸<rt>の</rt></ruby>べ<ruby>方<rt>かた</rt></ruby>を<ruby>知<rt>し</rt></ruby>らん</span><span data-pair-id="p46" class="">だけ</span>。<span data-pair-id="p47" class="">なら</span><ruby></ruby><span data-pair-id="p48" class=""><ruby>今<rt>いま</rt></ruby><ruby>知<rt>し</rt></ruby>りに<ruby>行<rt>い</rt></ruby>けや</span>。<span data-pair-id="p49" class="">ウジウジと</span><ruby></ruby><span data-pair-id="p50" class=""><ruby>俺<rt>おれ</rt></ruby>なんかが</span>とか<ruby></ruby><span data-pair-id="p52" class=""><ruby>言<rt>い</rt></ruby>うとらんと</span>。</div>
+  <div class="line-es">Zanka: <span data-pair-id="p41" class="">No es que</span> <span data-pair-id="p40" class="">quiera decir que</span> <span data-pair-id="p38" class="">buscar a Amo</span> <span data-pair-id="p39" class="">sea lo primero</span>. <span data-pair-id="p42" class="">Lo entiendo</span>. <span data-pair-id="p46" class="">Es solo que</span> <span data-pair-id="p43" class="">tú</span> <span data-pair-id="p44" class="">todavía</span> <span data-pair-id="p45" class="">no sabes cómo tender la mano</span>. <span data-pair-id="p47" class="">Entonces</span> <span data-pair-id="p48" class="">ve a aprenderlo ahora</span>. <span data-pair-id="p52" class="">Deja de</span> <span data-pair-id="p49" class="">lloriquear con</span> eso de "<span data-pair-id="p50" class="">alguien como yo</span>".</div>
+  <div class="line-literal">↳ no-es Amo buscar primero-que quiero-decir-no. entiendo. tú todavía mano tender-manera no-sabes-solo. entonces ahora aprender-a ve. lloriquear yo-como decir-no.</div>
+</div></div></div>
+
+<!-- §7 -->
+<div class="card"><div class="card-head"><div class="seq">§7</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">si no puedes dejar de preocuparte</div><div class="jpw">どうしても<ruby>放<rt>ほう</rt></ruby>っておけんなら</div><div class="rom">doushitemo hotte oken nara</div></div>
+  <div class="vw"><div class="lit">ve, anda (dialecto)</div><div class="jpw"><ruby>行<rt>い</rt></ruby>ったれよ</div><div class="rom">ittare yo</div></div>
+  <div class="vw"><div class="lit">modelo a seguir, ejemplo</div><div class="jpw"><ruby>手本<rt>てほん</rt></ruby></div><div class="rom">tehon</div></div>
+  <div class="vw"><div class="lit">muchos, montones (dialecto)</div><div class="jpw">ようけ</div><div class="rom">youke</div></div>
+  <div class="vw"><div class="lit">acumular, ir sumando</div><div class="jpw"><ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねる</div><div class="rom">tsumikasaneru</div></div>
+  <div class="vw"><div class="lit">un poco, algo (dialecto)</div><div class="jpw">ちったあ</div><div class="rom">chitta a</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><span data-pair-id="p54" class="">どうしても</span><ruby></ruby><span data-pair-id="p55" class=""><ruby>放<rt>ほう</rt></ruby>っておけん</span><span data-pair-id="p53" class="">なら</span><ruby></ruby><span data-pair-id="p56" class=""><ruby>行<rt>い</rt></ruby>ったれよ</span>。<span data-pair-id="p57" class="">やり<ruby>方<rt>かた</rt></ruby><ruby>分<rt>わ</rt></ruby>からんくても</span><span data-pair-id="p58" class="">ここには</span><ruby></ruby><span data-pair-id="p59" class=""><ruby>手本<rt>てほん</rt></ruby>が</span><span data-pair-id="p60" class="">ようけ</span><span data-pair-id="p61" class="">おる</span>が。<span data-pair-id="p62" class="">どうせ</span><span data-pair-id="p63" class="">お<ruby>前<rt>まえ</rt></ruby><ruby>一人<rt>ひとり</rt></ruby>じゃ</span><span data-pair-id="p64" class="">アモ<ruby>探<rt>さが</rt></ruby>せんじゃろう</span><span data-pair-id="p66" class="">から、<ruby>俺<rt>おれ</rt></ruby>も</span><ruby></ruby><span data-pair-id="p67" class=""><ruby>探<rt>さが</rt></ruby>すん<ruby>協力<rt>きょうりょく</rt></ruby>しちゃる</span>。<span data-pair-id="p68" class="">じゃけ</span><ruby></ruby><span data-pair-id="p69" class=""><ruby>先<rt>さき</rt></ruby>に</span><span data-pair-id="p70" class="">レムリンに<ruby>声<rt>こえ</rt></ruby>かけたれよ</span>。<span data-pair-id="p71" class="">そういうの</span><ruby></ruby><span data-pair-id="p72" class=""><ruby>積<rt>つ</rt></ruby>み<ruby>重<rt>かさ</rt></ruby>ねていったら</span>、<span data-pair-id="p73" class="">ちったあ</span><ruby></ruby><span data-pair-id="p74" class=""><ruby>仲間<rt>なかま</rt></ruby>と</span><ruby></ruby><span data-pair-id="p75" class=""><ruby>楽<rt>たの</rt></ruby>しくができる</span><span data-pair-id="p76" class="">かもな。</span></div>
+  <div class="line-es">Zanka: <span data-pair-id="p53" class="">Si</span> <span data-pair-id="p54" class="">de todas formas</span> <span data-pair-id="p55" class="">no puedes dejar de preocuparte</span>, <span data-pair-id="p56" class="">anda y ve</span>. <span data-pair-id="p57" class="">Aunque no sepas cómo hacerlo</span>, <span data-pair-id="p58" class="">aquí</span> <span data-pair-id="p61" class="">hay</span> <span data-pair-id="p60" class="">muchos</span> <span data-pair-id="p59" class="">modelos a seguir</span>. <span data-pair-id="p62" class="">De todas formas,</span> <span data-pair-id="p63" class="">solo tú</span> <span data-pair-id="p64" class="">no podrías buscar a Amo</span>, <span data-pair-id="p66" class="">así que yo también</span> <span data-pair-id="p67" class="">te ayudaré a buscarlo</span>. <span data-pair-id="p68" class="">Por eso</span>, <span data-pair-id="p69" class="">primero</span> <span data-pair-id="p70" class="">háblale a Lemurin</span>. <span data-pair-id="p72" class="">Si vas acumulando</span> <span data-pair-id="p71" class="">esas cosas</span>, <span data-pair-id="p76" class="">quizás</span> <span data-pair-id="p75" class="">puedas disfrutar</span> <span data-pair-id="p73" class="">un poco</span> más <span data-pair-id="p74" class="">con los compañeros.</span></div>
+  <div class="line-literal">↳ no-puedes-dejar-de-preocuparte ve. manera aunque-no-sepas aquí modelos muchos-hay. de-todas-formas tú solo Amo buscar-no-podrías porque, yo también buscar-ayudar-te. por-eso primero Lemurin-a háblale. esas-cosas acumulando si, un-poco compañeros-con disfrutar-poder-quizás.</div>
+</div></div></div>
+
+<!-- §8 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§8</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">intentarlo, probar</div><div class="jpw"><ruby>行<rt>い</rt></ruby>ってみる</div><div class="rom">itte miru</div></div>
+  <div class="vw"><div class="lit">gracias (informal)</div><div class="jpw">サンキュー</div><div class="rom">sankyuu</div></div>
+  <div class="vw"><div class="lit">hablar demasiado, soltarse la lengua</div><div class="jpw"><ruby>口<rt>くち</rt></ruby>が<ruby>回<rt>まわ</rt></ruby>ってしもうた</div><div class="rom">kuchi ga mawatte shimouta</div></div>
+  <div class="vw"><div class="lit">venganza</div><div class="jpw"><ruby>復讐<rt>ふくしゅう</rt></ruby></div><div class="rom">fukushuu</div></div>
+  <div class="vw"><div class="lit">es una lástima, es un desperdicio</div><div class="jpw">もったいない</div><div class="rom">mottainai</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><ruby></ruby><span data-pair-id="p77" class=""><ruby>行<rt>い</rt></ruby>ってみる</span>。<span data-pair-id="p78" class="">サンキュー</span>、<span data-pair-id="p79" class="">ザンカ</span>。</div>
+  <div class="line-es"><span data-pair-id="p90" class="">Rudo</span>: <span data-pair-id="p77" class="">Voy a intentarlo</span>. <span data-pair-id="p78" class="">Gracias</span>, <span data-pair-id="p79" class="">Zanka</span>.</div>
+  <div class="line-literal">↳ iré-a-intentar. gracias, Zanka.</div>
+  <div class="line-dialogue"><span class="speaker-tag">ザンカ</span><span data-pair-id="p80" class="">ベラベラと<ruby>口<rt>くち</rt></ruby>が<ruby>回<rt>まわ</rt></ruby>ってしもうたわ</span>。<span data-pair-id="p84" class="">あいつの</span><ruby></ruby><span data-pair-id="p83" class=""><ruby>一番<rt>いちばん</rt></ruby>の<ruby>目的<rt>もくてき</rt></ruby>が</span><ruby><span data-pair-id="p85" class="">復讐</span><rt>ふくしゅう</rt></ruby><span data-pair-id="p81" class="">だとしても</span>、<ruby></ruby><span data-pair-id="p86" class=""><ruby>俺<rt>おれ</rt></ruby>には<ruby>関係<rt>かんけい</rt></ruby>ない</span>。でも、<span data-pair-id="p90" class="">ルドが</span><ruby></ruby><span data-pair-id="p87" class=""><ruby>今<rt>いま</rt></ruby><ruby>復讐<rt>ふくしゅう</rt></ruby>だけに</span><span data-pair-id="p88" class="">とらわれるのは</span><span data-pair-id="p89" class="">もったいない。</span></div>
+  <div class="line-es">Zanka: <span data-pair-id="p80" class="">Ahora si parece que me dieron cuerda</span>. <span data-pair-id="p81" class="">Aunque</span> <span data-pair-id="p83" class="">el objetivo principal</span> <span data-pair-id="p84" class="">de ese chico</span> <span data-pair-id="p85" class="">sea la venganza</span>, <span data-pair-id="p86" class="">no es asunto mío</span>. Pero <span data-pair-id="p89" class="">sería una lástima que</span> Rudo ahora <span data-pair-id="p88" class="">se obsesione</span> <span data-pair-id="p87" class="">solo con la venganza</span>.</div>
+  <div class="line-literal">↳ demasiado boca-se-soltó. él-de principal objetivo venganza-es-aunque, yo-a no-tiene-que-ver. pero, Rudo ahora venganza-solo obsesionarse es-un-desperdicio.</div>
+</div></div></div>
+
+<!-- §9 -->
+<div class="card"><div class="card-head"><div class="seq">§9</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">dibujar un cuadro</div><div class="jpw"><ruby>絵<rt>え</rt></ruby>を<ruby>描<rt>か</rt></ruby>く</div><div class="rom">e wo kaku</div></div>
+  <div class="vw"><div class="lit">correctamente, de verdad</div><div class="jpw">ちゃんと</div><div class="rom">chanto</div></div>
+  <div class="vw"><div class="lit">nunca he (+ verbo)</div><div class="jpw">〜したことがない</div><div class="rom">〜shita koto ga nai</div></div>
+  <div class="vw"><div class="lit">palabras para decir, palabras de consuelo</div><div class="jpw"><ruby>掛<rt>か</rt></ruby>ける<ruby>言葉<rt>ことば</rt></ruby></div><div class="rom">kakeru kotoba</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><ruby></ruby><span data-pair-id="p91" class=""><ruby>俺<rt>おれ</rt></ruby>は</span>！<span data-pair-id="p92" class="">ちゃんと</span><ruby></ruby><span data-pair-id="p93" class=""><ruby>絵<rt>え</rt></ruby>を<ruby>描<rt>か</rt></ruby>いたことがない</span>！！</div>
+  <div class="line-es">Rudo: <span data-pair-id="p91" class="">¡Yo!</span> ¡¡<span data-pair-id="p93" class="">Nunca he dibujado</span> <span data-pair-id="p92" class="">bien</span> de verdad!!</div>
+  <div class="line-literal">↳ yo! correctamente cuadro dibujado-nunca!!</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span>うあ…え？</div>
+  <div class="line-es">Lemurin: Eh… ¿qué?</div>
+  <div class="line-literal">↳ uah… ¿eh?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>だから！<span data-pair-id="p94" class="">レムリンの<ruby>気持<rt>きも</rt></ruby>ちも</span>、<ruby></ruby><span data-pair-id="p95" class=""><ruby>掛<rt>か</rt></ruby>ける<ruby>言葉<rt>ことば</rt></ruby>も</span>、<ruby></ruby><span data-pair-id="p96" class=""><ruby>分<rt>わ</rt></ruby>からなーい</span>！！</div>
+  <div class="line-es">Rudo: ¡Por eso! ¡¡<span data-pair-id="p96" class="">No entiendo</span> <span data-pair-id="p94" class="">lo que sientes</span> <span data-pair-id="p95" class="">ni sé qué decirte</span>!!</div>
+  <div class="line-literal">↳ por-eso! Lemurin de sentimientos también, qué-decir-palabras también, no-entiendo!!</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span>えっ？</div>
+  <div class="line-es">Lemurin: ¿Eeh?</div>
+  <div class="line-literal">↳ ¿eeh?</div>
+</div></div></div>
+
+<!-- §10 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§10</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">hasta el punto de no avergonzarse</div><div class="jpw"><ruby>恥<rt>は</rt></ruby>ずかしくないくらい</div><div class="rom">hazukashiku nai kurai</div></div>
+  <div class="vw"><div class="lit">llegar a poder dibujar</div><div class="jpw"><ruby>描<rt>か</rt></ruby>けるようになりたい</div><div class="rom">kakeru you ni naritai</div></div>
+  <div class="vw"><div class="lit">enseñar un poco</div><div class="jpw">ちょっと<ruby>教<rt>おし</rt></ruby>えてほしい</div><div class="rom">chotto oshiete hoshii</div></div>
+  <div class="vw"><div class="lit">mural, pintura en pared</div><div class="jpw"><ruby>壁画<rt>へきが</rt></ruby></div><div class="rom">hekiga</div></div>
+  <div class="vw"><div class="lit">si hay tiempo</div><div class="jpw"><ruby>時間<rt>じかん</rt></ruby>があれば</div><div class="rom">jikan ga areba</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><span data-pair-id="p97" class="">だから</span>！<ruby></ruby><span data-pair-id="p101" class=""><ruby>絵<rt>え</rt></ruby>を<ruby>描<rt>か</rt></ruby>く<ruby>方法<rt>ほうほう</rt></ruby></span><span data-pair-id="p103" class=""><span data-pair-id="p101" class="">と</span>までは<ruby>言<rt>い</rt></ruby>わねえけど</span>、<ruby></ruby><span data-pair-id="p104" class=""><ruby>見<rt>み</rt></ruby>られても</span><ruby></ruby><span data-pair-id="p105" class=""><ruby>恥<rt>は</rt></ruby>ずかしくないくらいには</span><ruby></ruby><span data-pair-id="p106" class=""><ruby>描<rt>か</rt></ruby>けるようになりたい</span><span data-pair-id="p107" class="">からちょっと<ruby>教<rt>おし</rt></ruby>えてほしいと<ruby>思<rt>おも</rt></ruby>ってる</span>！<span data-pair-id="p108" class="">あと、</span><span data-pair-id="p109" class="">キャンバスタウンの</span><span data-pair-id="p110" class="">どこに</span><span data-pair-id="p111" class="">レムリンの<ruby>絵<rt>え</rt></ruby>が<ruby>描<rt>か</rt></ruby>いてあるのか</span><ruby></ruby><span data-pair-id="p112" class=""><ruby>見<rt>み</rt></ruby>てなかったから</span>、<ruby></ruby><span data-pair-id="p113" class=""><ruby>時間<rt>じかん</rt></ruby>があれば</span><span data-pair-id="p114" class="">それも<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたいと<ruby>思<rt>おも</rt></ruby>う</span>！</div>
+  <div class="line-es">Rudo: <span data-pair-id="p97" class="">¡Por eso!</span> <span data-pair-id="p103" class="">No digo que</span> <span data-pair-id="p101" class="">me enseñes a dibujar del todo</span>, pero <span data-pair-id="p106" class="">quiero llegar a dibujar lo suficiente</span> <span data-pair-id="p105" class="">para no avergonzarme</span> <span data-pair-id="p104" class="">si alguien lo ve,</span> ¡<span data-pair-id="p107" class="">así que me gustaría que me enseñes un poco</span>! <span data-pair-id="p108" class="">Además,</span> <span data-pair-id="p112" class="">como no había visto</span> <span data-pair-id="p110" class="">dónde</span> <span data-pair-id="p111" class="">están tus dibujos</span> <span data-pair-id="p109" class="">en Canvas Town</span>, <span data-pair-id="p113" class="">si hay tiempo</span> <span data-pair-id="p114" class="">también quiero ir a verlos</span>.</div>
+  <div class="line-literal">↳ por-eso! dibujar método hasta no-digo, pero visto aunque avergonzarse-no-tanto dibujar-poder-llegar-quiero porque un-poco enseñar-quiero-que! además, Canvas Town-en dónde-en Lemurin-de dibujos-están no-había-visto porque, tiempo-si eso-también ver-ir-quiero!</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span><span data-pair-id="p115" class="">ボク</span>…<ruby></ruby><span data-pair-id="p116" class=""><ruby>掛<rt>か</rt></ruby>ける<ruby>言葉<rt>ことば</rt></ruby>めっちゃある</span>！アギャギャギャ！</div>
+  <div class="line-es">Lemurin: <span data-pair-id="p115" class="">Yo</span>… ¡<span data-pair-id="p116" class="">tengo mucho que decirte</span>! ¡Agyagyagya!</div>
+  <div class="line-literal">↳ yo… palabras-que-decir muchísimas-tengo! ¡Agyagyagya!</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><ruby></ruby><span data-pair-id="p117" class=""><ruby>笑<rt>わら</rt></ruby>うってことは</span><ruby></ruby><span data-pair-id="p118" class=""><ruby>正解<rt>せいかい</rt></ruby>なのか</span>？</div>
+  <div class="line-es">Rudo: ¿<span data-pair-id="p117" class="">El hecho de que te rías</span> <span data-pair-id="p118" class="">significa que acerté</span>?</div>
+  <div class="line-literal">↳ reírse-que-significa acertado-¿es?</div>
+</div></div></div>
+
+<!-- §11 -->
+<div class="card"><div class="card-head"><div class="seq">§11</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">misión, tarea</div><div class="jpw"><ruby>任務<rt>にんむ</rt></ruby></div><div class="rom">ninmu</div></div>
+  <div class="vw"><div class="lit">asignar, encomendar</div><div class="jpw"><ruby>与<rt>あた</rt></ruby>える</div><div class="rom">ataeru</div></div>
+  <div class="vw"><div class="lit">excursión, salida de campo</div><div class="jpw"><ruby>遠足<rt>えんそく</rt></ruby></div><div class="rom">ensoku</div></div>
+  <div class="vw"><div class="lit">Canvas Town</div><div class="jpw">キャンバスタウン</div><div class="rom">kyanbasu taun</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">コルヴス</span><span data-pair-id="p119">さて、</span><ruby></ruby><span data-pair-id="p120" class=""><ruby>君<rt>きみ</rt></ruby>たちに<ruby>任務<rt>にんむ</rt></ruby>を<ruby>与<rt>あた</rt></ruby>える</span>。<span data-pair-id="p121" class="">キャンバスタウンまで</span><ruby></ruby><span data-pair-id="p122" class=""><ruby>遠足<rt>えんそく</rt></ruby>に<ruby>行<rt>い</rt></ruby>きなさい</span>。</div>
+  <div class="line-es">Corvus: <span data-pair-id="p119">Bien,</span> <span data-pair-id="p120" class="">les asigno una misión</span>. <span data-pair-id="p122" class="">Vayan de excursión</span> <span data-pair-id="p121" class="">a Canvas Town</span>.</div>
+  <div class="line-literal">↳ bien, ustedes-a misión asigno. Canvas Town-hasta excursión ir.</div>
+</div></div></div>
+
+<!-- §12 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§12</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">¡lo salvé! (dialecto)</div><div class="jpw"><ruby>助<rt>たす</rt></ruby>けた！</div><div class="rom">tasuketa!</div></div>
+  <div class="vw"><div class="lit">antes de llegar a</div><div class="jpw">〜に<ruby>着<rt>つ</rt></ruby>くまでに</div><div class="rom">〜ni tsuku made ni</div></div>
+  <div class="vw"><div class="lit">poder recolectar más que yo</div><div class="jpw"><ruby>私<rt>わたし</rt></ruby>より<ruby>集<rt>あつ</rt></ruby>められるかなー</div><div class="rom">watashi yori atsumerareru ka naa</div></div>
+  <div class="vw"><div class="lit">por qué tuve que llegar a esto</div><div class="jpw">なんでこんなことに</div><div class="rom">nande konna koto ni</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span>アギャギャ！<ruby>助<rt>たす</rt></ruby>けた！<span data-pair-id="p123" class="">キャンバスタウンに<ruby>着<rt>つ</rt></ruby>くまでに</span><ruby></ruby><span data-pair-id="p124" class=""><ruby>私<rt>わたし</rt></ruby>より</span><ruby></ruby><span data-pair-id="p125" class=""><ruby>集<rt>あつ</rt></ruby>められるかなー</span>？</div>
+  <div class="line-es">Lemurin: ¡Agyagya! ¡Salvado! ¿<span data-pair-id="p125" class="">Podrás recolectar</span> <span data-pair-id="p124" class="">más que yo</span> <span data-pair-id="p123" class="">antes de llegar a Canvas Town</span>?</div>
+  <div class="line-literal">↳ agyagya! salvado! Canvas Town-a llegar-antes yo-más recolectar-podrás-¿eh?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>うう…<span data-pair-id="p126" class="">なんでこんなことに</span>。</div>
+  <div class="line-es">Rudo: Ugh… <span data-pair-id="p126" class="">por qué tuve que llegar a esto</span>.</div>
+  <div class="line-literal">↳ ugh… por-qué esta-situación-en.</div>
+</div></div></div>
+
+<!-- §13 -->
+<div class="card"><div class="card-head"><div class="seq">§13</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">vaya, vaya (sorpresa)</div><div class="jpw">おやおや</div><div class="rom">oya oya</div></div>
+  <div class="vw"><div class="lit">escena enternecedora</div><div class="jpw"><ruby>微笑<rt>ほほえ</rt></ruby>ましい<ruby>光景<rt>こうけい</rt></ruby></div><div class="rom">hohoemashii koukei</div></div>
+  <div class="vw"><div class="lit">por eso, así que</div><div class="jpw">次第</div><div class="rom">shidai</div></div>
+  <div class="vw"><div class="lit">¡no lo digas!</div><div class="jpw"><ruby>言<rt>い</rt></ruby>うんじゃねえ！</div><div class="rom">iu n ja nee!</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">コルヴス</span>ん？<span data-pair-id="p127" class="">おやおや</span>、<ruby></ruby><span data-pair-id="p128" class=""><ruby>微笑<rt>ほほえ</rt></ruby>ましい<ruby>光景<rt>こうけい</rt></ruby>だね</span>。</div>
+  <div class="line-es">Zanka: ¿Eh? <span data-pair-id="p127" class="">Vaya, vaya</span>, <span data-pair-id="p128" class="">qué enternecedores se ven</span>.</div>
+  <div class="line-literal">↳ ¿eh? vaya-vaya, enternecedora escena-¿verdad?</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span>いやあ！<span data-pair-id="p129" class="">ルドが</span><span data-pair-id="p132" class="">ボクを<ruby>励<rt>はげ</rt></ruby>ますために</span><ruby></ruby><span data-pair-id="p131" class=""><ruby>絵<rt>え</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてくれ</span><span data-pair-id="p130" class="">って<ruby>言<rt>い</rt></ruby>うから</span>、<span data-pair-id="p133" class="">みんなで</span><ruby></ruby><span data-pair-id="p134" class=""><ruby>描<rt>か</rt></ruby>こうってなった<ruby>次第<rt>しだい</rt></ruby>。</span></div>
+  <div class="line-es">Lemurin: ¡Noooo! Es que <span data-pair-id="p129" class="">Rudo</span> <span data-pair-id="p130" class="">dijo que</span> <span data-pair-id="p131" class="">quería que le enseñara a dibujar</span> <span data-pair-id="p132" class="">para animarme a mí</span>, <span data-pair-id="p134" class="">así que terminamos dibujando</span> <span data-pair-id="p133" class="">todos juntos</span>.</div>
+  <div class="line-literal">↳ noo! Rudo yo-a animar-para dibujar enseñar-que dijo-porque, todos dibujar-vamos-que pasó-así.</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><ruby></ruby><span data-pair-id="p135" class=""><ruby>言<rt>い</rt></ruby>うんじゃねえ</span>！！</div>
+  <div class="line-es">Rudo: ¡¡<span data-pair-id="p135" class="">No lo digas</span>!!</div>
+  <div class="line-literal">↳ ¡¡no-digas!!</div>
+</div></div></div>
+
+<!-- §14 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§14</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">¿qué dibujaste?</div><div class="jpw"><ruby>何<rt>なに</rt></ruby>を<ruby>描<rt>か</rt></ruby>いたんだい</div><div class="rom">nani wo kaita n dai</div></div>
+  <div class="vw"><div class="lit">artístico (con matiz irónico)</div><div class="jpw"><ruby>芸術的<rt>げいじゅつてき</rt></ruby></div><div class="rom">geijutsuteki</div></div>
+  <div class="vw"><div class="lit">transformar, modificar</div><div class="jpw"><ruby>作<rt>つく</rt></ruby>り<ruby>変<rt>か</rt></ruby>える</div><div class="rom">tsukuri kaeru</div></div>
+  <div class="vw"><div class="lit">poder de crear desde cero</div><div class="jpw"><ruby>生<rt>う</rt></ruby>み<ruby>出<rt>だ</rt></ruby>す<ruby>力<rt>ちから</rt></ruby></div><div class="rom">umidasu chikara</div></div>
+  <div class="vw"><div class="lit">¡no lo muestres!</div><div class="jpw"><ruby>見<rt>み</rt></ruby>せんな！！</div><div class="rom">miseru na!!</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">コルヴス</span>そうか。<span data-pair-id="p136" class="">ルドは</span><ruby></ruby><span data-pair-id="p137" class=""><ruby>何<rt>なに</rt></ruby>を<ruby>描<rt>か</rt></ruby>いたんだい</span>？</div>
+  <div class="line-es">Zanka: Ya veo. ¿<span data-pair-id="p137" class="">Y qué dibujó</span> <span data-pair-id="p136" class="">Rudo</span>?</div>
+  <div class="line-literal">↳ ya-veo. Rudo qué dibujó-¿eh?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><span data-pair-id="p138" class="">これだよ</span>！</div>
+  <div class="line-es">Rudo: ¡<span data-pair-id="p138" class="">Este</span>!</div>
+  <div class="line-literal">↳ ¡este!</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span><span data-pair-id="p139" class="">おい</span>！<ruby></ruby><span data-pair-id="p140" class=""><ruby>見<rt>み</rt></ruby>せんな</span>！！</div>
+  <div class="line-es">Rudo: <span data-pair-id="p139" class="">¡Oye!</span> ¡¡<span data-pair-id="p140" class="">No lo muestres</span>!!</div>
+  <div class="line-literal">↳ ¡oye! ¡¡no-muestres!!</div>
+  <div class="line-dialogue"><span class="speaker-tag">コルヴス</span><ruby></ruby><span data-pair-id="p143" class=""><ruby>芸術的<rt>げいじゅつてき</rt></ruby><span data-pair-id="p142" class="">と</span></span><span data-pair-id="p142" class="">も<ruby>言<rt>い</rt></ruby>える</span>。<ruby></ruby><span data-pair-id="p144" class=""><ruby>作<rt>つく</rt></ruby>り<ruby>変<rt>か</rt></ruby>えはできても</span>、<ruby></ruby><span data-pair-id="p145" class=""><ruby>生<rt>う</rt></ruby>み<ruby>出<rt>だ</rt></ruby>す<ruby>力<rt>ちから</rt></ruby>はないよね。</span></div>
+  <div class="line-es">Zanka: <span data-pair-id="p142" class="">Se podría que</span> <span data-pair-id="p143" class="">es algo artístico</span>. <span data-pair-id="p144" class="">Puedes transformar cosas, pero</span> <span data-pair-id="p145" class="">no tienes el poder de crear desde cero, ¿verdad?</span></div>
+  <div class="line-literal">↳ artístico también puede-decirse. transformar aunque-puede, crear poder no-tienes-¿verdad?</div>
+  <div class="line-dialogue"><span class="speaker-tag">ルド</span>ギャー！！</div>
+  <div class="line-es">Rudo: ¡¡Gyaaa!!</div>
+  <div class="line-literal">↳ ¡¡gyaaa!!</div>
+</div></div></div>
+
+<!-- §15 -->
+<div class="card"><div class="card-head"><div class="seq">§15</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">¿eres Lemurin?</div><div class="jpw">レムリンだっけ</div><div class="rom">Remurin dakke</div></div>
+  <div class="vw"><div class="lit">por fin llegó el momento</div><div class="jpw">ついに<ruby>来<rt>き</rt></ruby>たのさ</div><div class="rom">tsui ni kita no sa</div></div>
+  <div class="vw"><div class="lit">mago, curandero de generaciones pasadas</div><div class="jpw"><ruby>歴代<rt>れきだい</rt></ruby>まじない<ruby>屋<rt>や</rt></ruby></div><div class="rom">rekidai majinaiya</div></div>
+  <div class="vw"><div class="lit">agregar, añadir a la pintura</div><div class="jpw"><ruby>書<rt>か</rt></ruby>き<ruby>足<rt>た</rt></ruby>す</div><div class="rom">kakitasu</div></div>
+  <div class="vw"><div class="lit">pensamiento, ideología</div><div class="jpw"><ruby>思想<rt>しそう</rt></ruby><ruby>思念<rt>しねん</rt></ruby></div><div class="rom">shisou shinen</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">エンジン</span><span data-pair-id="p146" class="">レムリンだっけ</span>？<ruby></ruby><span data-pair-id="p147" class=""><ruby>君<rt>きみ</rt></ruby>は<ruby>何<rt>なに</rt></ruby><ruby>描<rt>か</rt></ruby>いてるの</span>？</div>
+  <div class="line-es">Engine: ¿<span data-pair-id="p146" class="">Eras Lemurin</span>? ¿<span data-pair-id="p147" class="">Qué estás dibujando</span>?</div>
+  <div class="line-literal">↳ Lemurin-eras? tú qué dibujando-estás?</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span>フフン！<span data-pair-id="p148" class="">ついに<ruby>来<rt>き</rt></ruby>たのさ</span>！<ruby></ruby><span data-pair-id="p149" class=""><ruby>歴代<rt>れきだい</rt></ruby>まじない<ruby>屋<rt>や</rt></ruby>の</span><ruby></ruby><span data-pair-id="p150" class=""><ruby>壁画<rt>へきが</rt></ruby>に</span><span data-pair-id="p151" class="">ボクの<ruby>絵<rt>え</rt></ruby>を<ruby>書<rt>か</rt></ruby>き<ruby>足<rt>た</rt></ruby>す</span><ruby></ruby><span data-pair-id="p152" class=""><ruby>時<rt>とき</rt></ruby>が</span>！</div>
+  <div class="line-es">Lemurin: ¡Ajá! ¡<span data-pair-id="p148" class="">Por fin llegó el momento!</span> ¡<span data-pair-id="p152" class="">El momento</span> <span data-pair-id="p151" class="">de añadir mi pintura</span> <span data-pair-id="p150" class="">al mural</span> <span data-pair-id="p149" class="">de los magos de generaciones pasadas!</span></div>
+  <div class="line-literal">↳ ajá! por-fin llegó! generaciones-de magos-de mural-a mi dibujo añadir momento!</div>
+  <div class="line-dialogue"><span class="speaker-tag">コルヴス</span><ruby></ruby><span data-pair-id="p156" class=""><ruby>壁画<rt>へきが</rt></ruby>…</span><span data-pair-id="p154" class="">あ、あそこか</span>。<ruby></ruby><span data-pair-id="p157" class=""><ruby>壁画<rt>へきが</rt></ruby>ね</span>。<span data-pair-id="p158" class="">キャンバスタウンでは</span><ruby></ruby><span data-pair-id="p159" class=""><ruby>代々<rt>だいだい</rt></ruby>まじない<ruby>屋<rt>や</rt></ruby>が</span><ruby></ruby><span data-pair-id="p160" class=""><ruby>思想<rt>しそう</rt></ruby><ruby>思念<rt>しねん</rt></ruby>を<ruby>込<rt>こ</rt></ruby>め</span>、<ruby></ruby><span data-pair-id="p161" class=""><ruby>大<rt>おお</rt></ruby>きな<ruby>絵<rt>え</rt></ruby>を<ruby>描<rt>か</rt></ruby>くんだ</span>。</div>
+  <div class="line-es">Engine: <span data-pair-id="p156" class="">Mural…</span> <span data-pair-id="p154" class="">ah, ese lugar.</span> <span data-pair-id="p157" class="">El mural</span>, claro. <span data-pair-id="p158" class="">En Canvas Town</span>, <span data-pair-id="p159" class="">los magos de cada generación</span> <span data-pair-id="p160" class="">plasman sus pensamientos e ideología y</span> <span data-pair-id="p161" class="">pintan una gran obra</span>.</div>
+  <div class="line-literal">↳ mural… ah, aquel-lugar. mural-¿verdad? Canvas Town-en generación-tras-generación magos-que pensamiento-ideología plasmando, gran pintura pintan.</div>
+</div></div></div>
+
+<!-- §16 -->
+<div class="card card-alt"><div class="card-head"><div class="seq">§16</div></div>
+<div class="vocab-strip">
+  <div class="vw"><div class="lit">imagen, figura que evoca</div><div class="jpw"><ruby>思<rt>おも</rt></ruby>い<ruby>浮<rt>う</rt></ruby>かべた<ruby>像<rt>ぞう</rt></ruby></div><div class="rom">omoiukabeta zou</div></div>
+  <div class="vw"><div class="lit">en el centro</div><div class="jpw"><ruby>真<rt>まん</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>に</div><div class="rom">mannaka ni</div></div>
+  <div class="vw"><div class="lit">es un trabajo grandísimo</div><div class="jpw">すんごいお<ruby>仕事<rt>しごと</rt></ruby>になんぞ</div><div class="rom">sungoi oshigoto ni nan zo</div></div>
+  <div class="vw"><div class="lit">solo, sin ayuda</div><div class="jpw"><ruby>一人<rt>ひとり</rt></ruby>で<ruby>描<rt>か</rt></ruby>くるには</div><div class="rom">hitori de kakuru ni wa</div></div>
+  <div class="vw"><div class="lit">reabastecerse de tinta</div><div class="jpw">インクも<ruby>買<rt>か</rt></ruby>い<ruby>足<rt>た</rt></ruby>す</div><div class="rom">inku mo kaitasu</div></div>
+</div>
+<div class="sentences"><div class="line-group sentence-block">
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span><span data-pair-id="p162" class="">それぞれ</span><ruby></ruby><span data-pair-id="p163" class=""><ruby>今<rt>いま</rt></ruby>の<ruby>世代<rt>せだい</rt></ruby>を</span><ruby></ruby><span data-pair-id="p164" class=""><ruby>思<rt>おも</rt></ruby>い<ruby>浮<rt>う</rt></ruby>かべた<ruby>像<rt>ぞう</rt></ruby>を</span><ruby></ruby><span data-pair-id="p165" class=""><ruby>真<rt>まん</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>に<ruby>入<rt>い</rt></ruby>れてるんだよ</span>。<span data-pair-id="p166" class="">これは</span><span data-pair-id="p167" class="">すんごいお<ruby>仕事<rt>しごと</rt></ruby>になんぞ</span>！<span data-pair-id="p168" class="">でも、</span><ruby></ruby><span data-pair-id="p169" class=""><ruby>一人<rt>ひとり</rt></ruby>で<ruby>描<rt>か</rt></ruby>くには</span><ruby></ruby><span data-pair-id="p170" class=""><ruby>大変<rt>たいへん</rt></ruby>なんだよね</span>、<span data-pair-id="p171" class="">あの<ruby>場所<rt>ばしょ</rt></ruby>。</span></div>
+  <div class="line-es">Lemurin: <span data-pair-id="p162" class="">Cada uno</span> <span data-pair-id="p165" class="">pone en el centro</span> <span data-pair-id="p164" class="">la figura que evoca a</span> <span data-pair-id="p163" class="">su propia generación</span>. ¡<span data-pair-id="p166" class="">Esto</span> <span data-pair-id="p167" class="">se convertirá en un trabajo grandísimo</span>! <span data-pair-id="p168" class="">Pero</span> <span data-pair-id="p170" class="">es difícil</span> <span data-pair-id="p169" class="">pintarlo solo</span> <span data-pair-id="p171" class="">en ese lugar</span>.</div>
+  <div class="line-literal">↳ cada-uno actual generación evocando figura centro-en ponen. esto grandísimo trabajo se-convertirá! pero, solo pintar-para difícil-es aquel lugar.</div>
+  <div class="line-dialogue"><span class="speaker-tag">エンジン</span><span data-pair-id="p172" class="">インクも<ruby>買<rt>か</rt></ruby>い<ruby>足<rt>た</rt></ruby>す</span><span data-pair-id="p173" class="">の<ruby>忘<rt>わす</rt></ruby>れるなよ</span>。<span data-pair-id="p174" class="">わしも<ruby>手伝<rt>てつだ</rt></ruby>うが</span>、<ruby></ruby><span data-pair-id="p175" class=""><ruby>人員<rt>じんいん</rt></ruby>、<ruby>資材<rt>しざい</rt></ruby>、</span><span data-pair-id="p176" class=""><span data-pair-id="p175" class="">それらは</span>すべて</span><span data-pair-id="p177" class="">お<ruby>前<rt>まえ</rt></ruby>が<ruby>手配<rt>てはい</rt></ruby>するんだぞ</span>。</div>
+  <div class="line-es">Engine: <span data-pair-id="p173" class="">No te olvides de</span> <span data-pair-id="p172" class="">comprar más tinta también</span>. <span data-pair-id="p174" class="">Yo también te ayudaré, pero</span> <span data-pair-id="p175" class="">el personal, los materiales, <span data-pair-id="p176" class="">todo eso</span></span> <span data-pair-id="p177" class="">lo pones tú</span>.</div>
+  <div class="line-literal">↳ tinta también comprar-más-no-olvides. yo también ayudaré-pero, personal, materiales, esos-todos tú gestionas.</div>
+  <div class="line-dialogue"><span class="speaker-tag">レムリン</span><span data-pair-id="p178" class="">これが</span><span data-pair-id="p179" class="">クリエイターの<ruby>性</ruby></span><ruby><rt>さが</rt></ruby>。</div>
+  <div class="line-es">Lemurin: <span data-pair-id="p178" class="">Esta es</span> <span data-pair-id="p179" class="">la naturaleza del creador.</span></div>
+  <div class="line-literal">↳ esto creador-de naturaleza/destino.</div>
+</div></div></div>
+
+</main>
+<div class="controls-bar">
+  <label class="lbl-toggle" for="cb-furigana">読み</label><label class="lbl-toggle" for="cb-romaji">Roma</label><label class="lbl-toggle" for="cb-vocab">語彙</label><label class="lbl-toggle" for="cb-es">ES</label><label class="lbl-toggle" for="cb-literal">↳lit</label>
+  <div class="ctrl-divider"></div>
+  <div class="hl-palette">
+    <span class="hl-label">🔊</span>
+    <button class="hl-swatch" data-color="yellow" title="Amarillo" onclick="setColor('yellow',this)"></button>
+    <button class="hl-swatch" data-color="green" title="Verde" onclick="setColor('green',this)"></button>
+    <button class="hl-swatch" data-color="blue" title="Azul" onclick="setColor('blue',this)"></button>
+    <button class="hl-swatch" data-color="pink" title="Rosa" onclick="setColor('pink',this)"></button>
+    <button class="hl-swatch" data-color="purple" title="Morado" onclick="setColor('purple',this)"></button>
+    <button class="hl-swatch active" data-color="none" title="Borrar" onclick="setColor('none',this)"></button>
+  </div>
+  <div class="ctrl-divider"></div>
+  <button class="ctrl-btn ctrl-btn-edit" onclick="toggleEditar()" style="">✏️ Editar</button>
+  <button class="ctrl-btn ctrl-btn-save" onclick="guardarHTML()">💾 Guardar</button>
+<div class="ctrl-divider"></div><button class="ctrl-btn" id="btn-chunks" onclick="toggleChunks()" style="background: rgba(224, 123, 32, 0.15); border-color: rgba(224, 123, 32, 0.4); color: rgb(224, 123, 32); cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">🔗 Chunks</button></div>
+<script>
+var ed=false;var activeColor='yellow';
+function setColor(c,el){activeColor=c;document.querySelectorAll('.hl-swatch').forEach(function(s){s.classList.remove('active');});el.classList.add('active');}
+function _gvt(el){var t='';el.childNodes.forEach(function(n){if(n.nodeType===3)t+=n.nodeValue;else if(n.nodeType===1&&n.tagName!=='RT')t+=_gvt(n);});return t;}
+function _getLine(nd){while(nd){if(nd.classList&&(nd.classList.contains('line-jp')||nd.classList.contains('line-es')||nd.classList.contains('line-literal')||nd.classList.contains('line-en')||nd.classList.contains('line-dialogue')||nd.classList.contains('vocab-strip')))return nd;nd=nd.parentNode;}return null;}
+function _applyHL(line,range,cls){
+  function collectLeaves(root,acc){
+    root.childNodes.forEach(function(n){
+      if(n.nodeType===1&&n.tagName==='RT')return;
+      if(n.nodeType===1&&n.tagName==='RUBY'){acc.push(n);return;}
+      if(n.nodeType===3){if(n.nodeValue.length)acc.push(n);return;}
+      collectLeaves(n,acc);
+    });
+  }
+  var leaves=[];collectLeaves(line,leaves);
+  leaves.forEach(function(nd){
+    var nr=document.createRange();
+    try{nr.selectNode(nd);}catch(e){return;}
+    if(range.compareBoundaryPoints(Range.START_TO_END,nr)<=0)return;
+    if(range.compareBoundaryPoints(Range.END_TO_START,nr)>=0)return;
+    if(nd.nodeType===1){
+      if(nd.parentNode&&nd.parentNode.tagName==='SPAN'&&nd.parentNode.className.indexOf('hl-')===0){nd.parentNode.className=cls;return;}
+      var sp=document.createElement('span');sp.className=cls;
+      nd.parentNode.insertBefore(sp,nd);sp.appendChild(nd);return;
+    }
+    var txt=nd;
+    var isInsideHL=txt.parentNode&&txt.parentNode.tagName==='SPAN'&&txt.parentNode.className.indexOf('hl-')===0;
+    if(isInsideHL){txt.parentNode.className=cls;return;}
+    var start=0,end=txt.nodeValue.length;
+    if(range.startContainer===txt)start=range.startOffset;
+    if(range.endContainer===txt)end=range.endOffset;
+    if(start===end)return;
+    if(end<txt.nodeValue.length)txt.splitText(end);
+    if(start>0)txt=txt.splitText(start);
+    var sp=document.createElement('span');sp.className=cls;
+    txt.parentNode.insertBefore(sp,txt);sp.appendChild(txt);
+  });
+}
+function _eraseHL(line,range){Array.from(line.querySelectorAll('span')).filter(function(sp){return sp.className&&sp.className.indexOf('hl-')===0;}).forEach(function(sp){var nr=document.createRange();try{nr.selectNode(sp);}catch(e){return;}if(range.compareBoundaryPoints(Range.END_TO_START,nr)>=0)return;if(range.compareBoundaryPoints(Range.START_TO_END,nr)<=0)return;var p=sp.parentNode;while(sp.firstChild)p.insertBefore(sp.firstChild,sp);p.removeChild(sp);try{p.normalize();}catch(x){}});}
+function _doHL(){var sel=window.getSelection();if(!sel||sel.isCollapsed||!sel.rangeCount)return;var range=sel.getRangeAt(0);var anchor=sel.anchorNode;var node=anchor&&anchor.nodeType===3?anchor.parentNode:anchor;var line=_getLine(node);sel.removeAllRanges();if(!line)return;if(activeColor==='none')_eraseHL(line,range);else _applyHL(line,range,'hl-'+activeColor);}
+document.addEventListener('mouseup',_doHL);
+document.addEventListener('touchend',function(e){
+  var t=e.target;
+  while(t&&t!==document.body){if(t.classList&&t.classList.contains('controls-bar'))return;t=t.parentNode;}
+  setTimeout(function(){
+    var sel=window.getSelection();
+    if(!sel||sel.isCollapsed||!sel.rangeCount)return;
+    var range=sel.getRangeAt(0);
+    if(range.collapsed)return;
+    var anchor=sel.anchorNode;
+    var node=anchor&&anchor.nodeType===3?anchor.parentNode:anchor;
+    var line=_getLine(node);
+    if(!line)return;
+    var savedRange=range.cloneRange();
+    sel.removeAllRanges();
+    if(activeColor==='none')_eraseHL(line,savedRange);
+    else _applyHL(line,savedRange,'hl-'+activeColor);
+  },200);
+});
+function toggleEditar(){ed=!ed;var m=document.getElementById('main-content'),b=document.querySelector('.edit-banner'),btn=document.querySelector('.ctrl-btn-edit');if(ed){m.classList.add('edit-active');b.style.display='block';btn.textContent='✅ Listo';btn.style.cssText='background:#c97d10;color:#fff;border-color:#c97d10;';m.querySelectorAll('.vocab-strip,.sentences').forEach(function(e){e.setAttribute('contenteditable','true');});}else{m.classList.remove('edit-active');b.style.display='none';btn.textContent='✏️ Editar';btn.style.cssText='';m.querySelectorAll('[contenteditable]').forEach(function(e){e.removeAttribute('contenteditable');})}}
+function guardarHTML(){if(ed)toggleEditar();var c=document.documentElement.cloneNode(true),o=document.querySelectorAll('.vocab-strip,.sentences'),cl=c.querySelectorAll('.vocab-strip,.sentences');for(var i=0;i<o.length;i++)if(cl[i])cl[i].innerHTML=o[i].innerHTML;var b=new Blob(['<!DOCTYPE html>'+c.outerHTML],{type:'text/html'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='Maru3C_Zanka_Rudo_Lemurin.html';a.click();}
+</script>
+
+
+<script>var _con=false;
+function toggleChunks(){
+  _con=!_con;
+  document.body.classList.toggle("chunks-on",_con);
+  var b=document.getElementById("btn-chunks");
+  if(b)b.textContent=_con?"\uD83D\uDD17 Chunks ON":"\uD83D\uDD17 Chunks";
+}
+document.addEventListener("DOMContentLoaded",function(){
+  var b=document.getElementById("btn-chunks");
+  if(!b)return;
+  b.addEventListener("touchend",function(e){
+    e.preventDefault();
+    toggleChunks();
+  },{passive:false});
+});
+document.addEventListener("mouseover",function(e){
+  if(!_con)return;
+  var s=e.target.closest("span[data-pair-id]");if(!s)return;
+  document.querySelectorAll('span[data-pair-id="'+s.dataset.pairId+'"]').forEach(function(x){x.classList.add("chl");});
+});
+document.addEventListener("mouseout",function(e){
+  if(!_con)return;
+  var s=e.target.closest("span[data-pair-id]");if(!s)return;
+  document.querySelectorAll('span[data-pair-id="'+s.dataset.pairId+'"]').forEach(function(x){x.classList.remove("chl");});
+});
+document.addEventListener("click",function(e){
+  if(!_con)return;
+  var s=e.target.closest("span[data-pair-id]");if(!s)return;
+  var isHl=s.classList.contains("chl");
+  document.querySelectorAll("span[data-pair-id].chl").forEach(function(x){x.classList.remove("chl");});
+  if(!isHl)document.querySelectorAll('span[data-pair-id="'+s.dataset.pairId+'"]').forEach(function(x){x.classList.add("chl");});
+});
+</script></body></html>
